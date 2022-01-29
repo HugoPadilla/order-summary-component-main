@@ -21,6 +21,8 @@ $primary-bright-blue-shadow: hsla(268, 97%, 75%, 0.377);
 body {
     background-image: url(../images/pattern-background-desktop.svg);
     background-repeat: no-repeat;
+    background-position: top center;
+    background-size: contain;
     background-color: $primary-pale-blue;
     font-family: $font-family;
 }
@@ -178,9 +180,13 @@ body {
 
 
 .attribution {
-    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
     font-size: 11px;
     text-align: center;
+    margin:2em;
 }
 
 .attribution a {

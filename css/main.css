@@ -8,6 +8,8 @@
 body {
   background-image: url(../images/pattern-background-desktop.svg);
   background-repeat: no-repeat;
+  background-position: top center;
+  background-size: contain;
   background-color: #e0e8ff;
   font-family: "Red Hat Display", sans-serif;
 }
@@ -213,9 +215,13 @@ body {
 }
 
 .attribution {
-  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   font-size: 11px;
   text-align: center;
+  margin: 2em;
 }
 
 .attribution a {
