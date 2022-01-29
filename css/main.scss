@@ -1,3 +1,181 @@
+$font-family: 'Red Hat Display',
+sans-serif;
+$font-size-paragraph: 16px;
+
+$primary-pale-blue: hsl(225, 100%, 94%);
+$primary-bright-blue: hsl(245, 75%, 52%);
+$primary-bright-blue-desaturate: #766CF1;
+
+$neutral-very-pale-blue: hsl(225, 100%, 98%);
+$neutral-desaturated-blue: hsl(224, 23%, 55%);
+$neutral-dark-blue: hsl(223, 47%, 23%);
+
+$primary-bright-blue-shadow: hsla(268, 97%, 75%, 0.377);
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(../images/pattern-background-desktop.svg);
+    background-repeat: no-repeat;
+    background-color: $primary-pale-blue;
+    font-family: $font-family;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    min-height: 100vh;
+}
+
+@mixin customTransition($property: transform) {
+    transition-property: $property;
+    transition-duration: .3s;
+    transition-timing-function: ease-in-out;
+}
+
+.card {
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    border-radius: 1.2rem;
+    background-color: white;
+    display: inline-flex;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    margin: 1em;
+
+    .illustration {
+        max-width: 26em;
+    }
+
+    .card-content {
+        padding-top: 2em;
+        padding-left: 2em;
+        padding-right: 2em;
+        padding-bottom: 1em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+
+        .title {
+            color: $neutral-dark-blue;
+            font-size: 1.9em;
+            font-weight: 900;
+            text-align: center;
+            padding-bottom: .5em;
+        }
+
+        .desc {
+            text-align: center;
+            font-size: $font-size-paragraph;
+            font-weight: 500;
+            letter-spacing: .02em;
+            line-height: 1.4em;
+            color: $neutral-desaturated-blue;
+            max-width: 20em;
+            padding-bottom: 1em;
+        }
+
+        .plan-content {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            border-radius: .5em;
+            padding: 1em;
+            margin-bottom: 2em;
+            background-color: $neutral-very-pale-blue;
+
+            .info {
+                padding-right: 1em;
+                padding-left: 1em;
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: auto;
+
+                h5 {
+                    font-weight: 900;
+                    color: $neutral-dark-blue;
+                }
+
+                p {
+                    color: $neutral-desaturated-blue;
+                }
+            }
+
+            a {
+                @include customTransition(color);
+                font-weight: bold;
+                color: $primary-bright-blue;
+
+                &:hover {
+                    text-decoration: none;
+                    color: $primary-bright-blue-desaturate;
+                }
+            }
+        }
+
+        .button-primary {
+            @include customTransition();
+            cursor: pointer;
+            background-color: $primary-bright-blue;
+            color: $neutral-very-pale-blue;
+            font-weight: 900;
+            border: none;
+            border-radius: .5em;
+            width: 100%;
+            padding: 1.2em 2em;
+            margin-bottom: 1em;
+            position: relative;
+            box-shadow: $primary-bright-blue-shadow 0px 5px 15px;
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                box-shadow: $primary-bright-blue-shadow 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+                @include customTransition(opacity);
+            }
+
+            &:hover {
+                background-color: $primary-bright-blue-desaturate;
+                transform: scale(1.05, 1.05);
+            }
+
+            &:hover::after {
+                opacity: 1;
+            }
+
+        }
+
+        .button-secondary {
+            @include customTransition(all);
+            cursor: pointer;
+            color: $neutral-desaturated-blue;
+            background-color: transparent;
+            border: none;
+            font-weight: 900;
+            padding: 1.2em 2em;
+            &:hover {
+                color: $neutral-dark-blue;
+                transform: scale(1.05, 1.05);
+            }
+        }
+    }
+}
+
+
+
 .attribution {
     display: none;
     font-size: 11px;
