@@ -53,7 +53,7 @@ body {
   padding-top: 2em;
   padding-left: 2em;
   padding-right: 2em;
-  padding-bottom: 1em;
+  padding-bottom: 1.2em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -83,7 +83,7 @@ body {
   line-height: 1.4em;
   color: #7280a7;
   max-width: 20em;
-  padding-bottom: 1em;
+  padding-bottom: 1.2em;
 }
 
 .card .card-content .plan-content {
@@ -95,7 +95,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   border-radius: .5em;
-  padding: 1em;
+  padding: 1.2em 1em;
   margin-bottom: 2em;
   background-color: #f5f7ff;
 }
@@ -114,7 +114,8 @@ body {
   height: auto;
 }
 
-.card .card-content .plan-content .info h5 {
+.card .card-content .plan-content .info h2 {
+  font-size: 16px;
   font-weight: 900;
   color: #1f2f56;
 }
